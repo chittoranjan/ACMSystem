@@ -1,6 +1,6 @@
 ﻿namespace ACM
 {
-    partial class Form1
+    partial class LogInForm
     {
         /// <summary>
         /// Required designer variable.
