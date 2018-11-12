@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ACM.UI;
 
 namespace ACM
 {
@@ -15,6 +16,18 @@ namespace ACM
         public LogInForm()
         {
             InitializeComponent();
+        }
+
+        private void btnLogIn_Click(object sender, EventArgs e)
+        {
+            DashBoardForm dashBoardForm=new DashBoardForm();
+            dashBoardForm.Show();
+        }
+
+        private void btnLogInCancel_Click(object sender, EventArgs e)
+        {
+            txtBoxUserId.Clear();
+            txtBoxPassword.Clear();
         }
     }
 }
