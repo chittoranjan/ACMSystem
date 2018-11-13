@@ -133,6 +133,7 @@
             this.txtBoxDepositFeeAmount.Name = "txtBoxDepositFeeAmount";
             this.txtBoxDepositFeeAmount.Size = new System.Drawing.Size(217, 20);
             this.txtBoxDepositFeeAmount.TabIndex = 0;
+            this.txtBoxDepositFeeAmount.Text = "0";
             // 
             // CreateMemberForm
             // 

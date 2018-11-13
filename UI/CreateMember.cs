@@ -25,14 +25,18 @@ namespace ACM.UI
             _db=new AcmDbContext();
             Member member = new Member
             {
-                Name = txtBoxMemberName.Text.ToString(),
-                MobileNo = txtBoxMemberMobileNo.Text.ToString(),
+                Name = txtBoxMemberName.Text,
+                MobileNo = txtBoxMemberMobileNo.Text,
                 CreateDateTime = DateTime.Now
             };
-            _db.Members.Add(member);
-            _db.SaveChanges();
+            if (member.Name!=null && member.MobileNo!=null) 
+            {
+                _db.Members.Add(member);
+                _db.SaveChanges();
+            }
+            
 
-            if (txtBoxDepositFeeAmount.Text!=null)
+            if (!string.IsNullOrEmpty(txtBoxDepositFeeAmount.Text))
             {
                 MemberFeeAmount memberFeeAmount = new MemberFeeAmount
                 {

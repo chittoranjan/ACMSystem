@@ -29,21 +29,21 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.txtBoxMemberSearch = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.btnSearchMember = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.txtBoxMemberMobileNo = new System.Windows.Forms.TextBox();
             this.txtBoxMemberName = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.depositDateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.txtBoxDepositAmount = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.label4 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtBoxMemberSearch = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.btnSearchMember = new System.Windows.Forms.Button();
             this.btnDeposit = new System.Windows.Forms.Button();
             this.btnDepositCancel = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
@@ -63,9 +63,45 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Member Info";
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(27, 46);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(41, 13);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "Name :";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(27, 94);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(61, 13);
+            this.label3.TabIndex = 3;
+            this.label3.Text = "Mobile No :";
+            // 
+            // txtBoxMemberMobileNo
+            // 
+            this.txtBoxMemberMobileNo.Location = new System.Drawing.Point(114, 94);
+            this.txtBoxMemberMobileNo.Name = "txtBoxMemberMobileNo";
+            this.txtBoxMemberMobileNo.ReadOnly = true;
+            this.txtBoxMemberMobileNo.Size = new System.Drawing.Size(217, 20);
+            this.txtBoxMemberMobileNo.TabIndex = 20;
+            this.txtBoxMemberMobileNo.TabStop = false;
+            // 
+            // txtBoxMemberName
+            // 
+            this.txtBoxMemberName.Location = new System.Drawing.Point(114, 46);
+            this.txtBoxMemberName.Name = "txtBoxMemberName";
+            this.txtBoxMemberName.ReadOnly = true;
+            this.txtBoxMemberName.Size = new System.Drawing.Size(217, 20);
+            this.txtBoxMemberName.TabIndex = 19;
+            this.txtBoxMemberName.TabStop = false;
+            // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.dateTimePicker1);
+            this.groupBox2.Controls.Add(this.depositDateTimePicker);
             this.groupBox2.Controls.Add(this.label7);
             this.groupBox2.Controls.Add(this.label6);
             this.groupBox2.Controls.Add(this.label5);
@@ -78,6 +114,65 @@
             this.groupBox2.TabIndex = 0;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Deposit Info";
+            // 
+            // depositDateTimePicker
+            // 
+            this.depositDateTimePicker.Location = new System.Drawing.Point(118, 94);
+            this.depositDateTimePicker.Name = "depositDateTimePicker";
+            this.depositDateTimePicker.Size = new System.Drawing.Size(217, 20);
+            this.depositDateTimePicker.TabIndex = 3;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(31, 46);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(49, 13);
+            this.label7.TabIndex = 2;
+            this.label7.Text = "Amount :";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(31, 94);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(36, 13);
+            this.label6.TabIndex = 3;
+            this.label6.Text = "Date :";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(31, 46);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(41, 13);
+            this.label5.TabIndex = 2;
+            this.label5.Text = "Name :";
+            // 
+            // txtBoxDepositAmount
+            // 
+            this.txtBoxDepositAmount.Location = new System.Drawing.Point(118, 46);
+            this.txtBoxDepositAmount.Name = "txtBoxDepositAmount";
+            this.txtBoxDepositAmount.ReadOnly = true;
+            this.txtBoxDepositAmount.Size = new System.Drawing.Size(217, 20);
+            this.txtBoxDepositAmount.TabIndex = 2;
+            this.txtBoxDepositAmount.Text = "0";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(31, 94);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(36, 13);
+            this.label4.TabIndex = 3;
+            this.label4.Text = "Date :";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(118, 46);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(217, 20);
+            this.textBox1.TabIndex = 4;
             // 
             // txtBoxMemberSearch
             // 
@@ -105,99 +200,9 @@
             this.btnSearchMember.UseVisualStyleBackColor = true;
             this.btnSearchMember.Click += new System.EventHandler(this.btnSearchMember_Click);
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(27, 46);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(41, 13);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Name :";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(27, 94);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(61, 13);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "Mobile No :";
-            // 
-            // txtBoxMemberMobileNo
-            // 
-            this.txtBoxMemberMobileNo.Location = new System.Drawing.Point(114, 94);
-            this.txtBoxMemberMobileNo.Name = "txtBoxMemberMobileNo";
-            this.txtBoxMemberMobileNo.Size = new System.Drawing.Size(217, 20);
-            this.txtBoxMemberMobileNo.TabIndex = 20;
-            this.txtBoxMemberMobileNo.TabStop = false;
-            // 
-            // txtBoxMemberName
-            // 
-            this.txtBoxMemberName.Location = new System.Drawing.Point(114, 46);
-            this.txtBoxMemberName.Name = "txtBoxMemberName";
-            this.txtBoxMemberName.Size = new System.Drawing.Size(217, 20);
-            this.txtBoxMemberName.TabIndex = 19;
-            this.txtBoxMemberName.TabStop = false;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(118, 46);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(217, 20);
-            this.textBox1.TabIndex = 4;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(31, 94);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(36, 13);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "Date :";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(31, 46);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(41, 13);
-            this.label5.TabIndex = 2;
-            this.label5.Text = "Name :";
-            // 
-            // txtBoxDepositAmount
-            // 
-            this.txtBoxDepositAmount.Location = new System.Drawing.Point(118, 46);
-            this.txtBoxDepositAmount.Name = "txtBoxDepositAmount";
-            this.txtBoxDepositAmount.Size = new System.Drawing.Size(217, 20);
-            this.txtBoxDepositAmount.TabIndex = 2;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(31, 94);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(36, 13);
-            this.label6.TabIndex = 3;
-            this.label6.Text = "Date :";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(31, 46);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(49, 13);
-            this.label7.TabIndex = 2;
-            this.label7.Text = "Amount :";
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(118, 94);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(217, 20);
-            this.dateTimePicker1.TabIndex = 3;
-            // 
             // btnDeposit
             // 
+            this.btnDeposit.Enabled = false;
             this.btnDeposit.Location = new System.Drawing.Point(784, 372);
             this.btnDeposit.Name = "btnDeposit";
             this.btnDeposit.Size = new System.Drawing.Size(75, 23);
@@ -250,7 +255,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtBoxMemberMobileNo;
         private System.Windows.Forms.TextBox txtBoxMemberName;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker depositDateTimePicker;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
