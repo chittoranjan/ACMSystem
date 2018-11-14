@@ -28,5 +28,17 @@ namespace ACM.UI
             DepositForm depositForm=new DepositForm();
             depositForm.Show();
         }
+
+        private void btnWithdraw_Click(object sender, EventArgs e)
+        {
+            WithdrawForm withdrawForm=new WithdrawForm();
+            withdrawForm.Show();
+        }
+
+        private void btnMemberFee_Click(object sender, EventArgs e)
+        {
+            UpdateMemberFeeForm updateMemberFeeForm=new UpdateMemberFeeForm();
+            updateMemberFeeForm.Show();
+        }
     }
 }

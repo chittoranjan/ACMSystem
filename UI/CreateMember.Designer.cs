@@ -116,16 +116,16 @@
             this.groupBox2.Size = new System.Drawing.Size(411, 260);
             this.groupBox2.TabIndex = 3;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Deposit Fee Amount";
+            this.groupBox2.Text = "Member Fee Amount";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(19, 48);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(103, 13);
+            this.label3.Size = new System.Drawing.Size(105, 13);
             this.label3.TabIndex = 0;
-            this.label3.Text = "Deposit Fee Amount";
+            this.label3.Text = "Member Fee Amount";
             // 
             // txtBoxDepositFeeAmount
             // 

@@ -35,11 +35,11 @@
             this.reportGroupBox = new System.Windows.Forms.GroupBox();
             this.operationGroupBox = new System.Windows.Forms.GroupBox();
             this.btnCreateMember = new System.Windows.Forms.Button();
+            this.btnWithdraw = new System.Windows.Forms.Button();
+            this.btnDeposit = new System.Windows.Forms.Button();
             this.btnMemberFee = new System.Windows.Forms.Button();
             this.btnMemberList = new System.Windows.Forms.Button();
             this.btnDepositMemberList = new System.Windows.Forms.Button();
-            this.btnDeposit = new System.Windows.Forms.Button();
-            this.btnWithdraw = new System.Windows.Forms.Button();
             this.reportGroupBox.SuspendLayout();
             this.operationGroupBox.SuspendLayout();
             this.SuspendLayout();
@@ -118,14 +118,35 @@
             this.btnCreateMember.UseVisualStyleBackColor = true;
             this.btnCreateMember.Click += new System.EventHandler(this.btnCreateMember_Click);
             // 
+            // btnWithdraw
+            // 
+            this.btnWithdraw.Location = new System.Drawing.Point(208, 113);
+            this.btnWithdraw.Name = "btnWithdraw";
+            this.btnWithdraw.Size = new System.Drawing.Size(150, 50);
+            this.btnWithdraw.TabIndex = 0;
+            this.btnWithdraw.Text = "Withdraw";
+            this.btnWithdraw.UseVisualStyleBackColor = true;
+            this.btnWithdraw.Click += new System.EventHandler(this.btnWithdraw_Click);
+            // 
+            // btnDeposit
+            // 
+            this.btnDeposit.Location = new System.Drawing.Point(34, 113);
+            this.btnDeposit.Name = "btnDeposit";
+            this.btnDeposit.Size = new System.Drawing.Size(150, 50);
+            this.btnDeposit.TabIndex = 0;
+            this.btnDeposit.Text = "Deposit";
+            this.btnDeposit.UseVisualStyleBackColor = true;
+            this.btnDeposit.Click += new System.EventHandler(this.btnDeposit_Click);
+            // 
             // btnMemberFee
             // 
             this.btnMemberFee.Location = new System.Drawing.Point(577, 29);
             this.btnMemberFee.Name = "btnMemberFee";
             this.btnMemberFee.Size = new System.Drawing.Size(150, 50);
             this.btnMemberFee.TabIndex = 0;
-            this.btnMemberFee.Text = "Member Fee";
+            this.btnMemberFee.Text = "Update Member Fee";
             this.btnMemberFee.UseVisualStyleBackColor = true;
+            this.btnMemberFee.Click += new System.EventHandler(this.btnMemberFee_Click);
             // 
             // btnMemberList
             // 
@@ -144,25 +165,6 @@
             this.btnDepositMemberList.TabIndex = 0;
             this.btnDepositMemberList.Text = "Deposit Member List";
             this.btnDepositMemberList.UseVisualStyleBackColor = true;
-            // 
-            // btnDeposit
-            // 
-            this.btnDeposit.Location = new System.Drawing.Point(34, 113);
-            this.btnDeposit.Name = "btnDeposit";
-            this.btnDeposit.Size = new System.Drawing.Size(150, 50);
-            this.btnDeposit.TabIndex = 0;
-            this.btnDeposit.Text = "Deposit";
-            this.btnDeposit.UseVisualStyleBackColor = true;
-            this.btnDeposit.Click += new System.EventHandler(this.btnDeposit_Click);
-            // 
-            // btnWithdraw
-            // 
-            this.btnWithdraw.Location = new System.Drawing.Point(208, 113);
-            this.btnWithdraw.Name = "btnWithdraw";
-            this.btnWithdraw.Size = new System.Drawing.Size(150, 50);
-            this.btnWithdraw.TabIndex = 0;
-            this.btnWithdraw.Text = "Withdraw";
-            this.btnWithdraw.UseVisualStyleBackColor = true;
             // 
             // DashBoardForm
             // 
