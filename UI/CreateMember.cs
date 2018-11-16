@@ -22,37 +22,74 @@ namespace ACM.UI
         private AcmDbContext _db;
         private void btnCreateMember_Click(object sender, EventArgs e)
         {
-            _db=new AcmDbContext();
-            Member member = new Member
+            try
             {
-                Name = txtBoxMemberName.Text,
-                MobileNo = txtBoxMemberMobileNo.Text,
-                CreateDateTime = DateTime.Now
-            };
-            if (member.Name!=null && member.MobileNo!=null) 
+                if (string.IsNullOrEmpty(txtBoxMemberName.Text))
+                {
+                    MessageBox.Show("Please provide member name!");
+                    return;
+                }
+                if (string.IsNullOrEmpty(txtBoxMemberMobileNo.Text))
+                {
+                    MessageBox.Show("Please provide member mobile no!");
+                    return;
+                }
+                _db = new AcmDbContext();
+
+                Member member = new Member
+                {
+                    Name = txtBoxMemberName.Text,
+                    MobileNo = txtBoxMemberMobileNo.Text,
+                    CreateDateTime = DateTime.Now
+                };
+
+                if (member.Name != "" && member.MobileNo != "")
+                {
+                    _db.Members.Add(member);
+                    _db.SaveChanges();
+
+                    var feeAmount = Convert.ToDouble(txtBoxDepositFeeAmount.Text);
+                    if (feeAmount>0 && member.Id > 0)
+                    {
+                        MemberFeeAmount memberFeeAmount = new MemberFeeAmount
+                        {
+                            MemberId = member.Id,
+                            FeeAmount = Convert.ToDouble(txtBoxDepositFeeAmount.Text)
+                        };
+                        _db.MemberFeeAmounts.Add(memberFeeAmount);
+                        _db.SaveChanges();
+                        ClearTextBox();
+                        MessageBox.Show("Member created successfully with fee amount");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Member created successully but fee amount not created");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Failed to create member");
+                }
+            }
+            catch (Exception ex)
             {
-                _db.Members.Add(member);
-                _db.SaveChanges();
+
+                MessageBox.Show("Get an exception. The exception is -" + Environment.NewLine + ex.ToString());
             }
             
 
-            if (!string.IsNullOrEmpty(txtBoxDepositFeeAmount.Text))
-            {
-                MemberFeeAmount memberFeeAmount = new MemberFeeAmount
-                {
-                    MemberId = member.Id,
-                    FeeAmount = Convert.ToDouble(txtBoxDepositFeeAmount.Text)
-                };
-                _db.MemberFeeAmounts.Add(memberFeeAmount);
-                _db.SaveChanges();
-            }
+        }
 
+        private void ClearTextBox()
+        {
+            txtBoxMemberName.Clear();
+            txtBoxMemberMobileNo.Clear();
+            txtBoxDepositFeeAmount.Text = 0.ToString();
         }
 
         private void btnCancelMemberCreate_Click(object sender, EventArgs e)
         {
-            txtBoxMemberName.Clear();
-            txtBoxMemberMobileNo.Clear();
+            ClearTextBox();
             this.Close();
         }
     }

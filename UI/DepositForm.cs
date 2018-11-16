@@ -23,49 +23,88 @@ namespace ACM.UI
         private int _memberId;
         private void btnSearchMember_Click(object sender, EventArgs e)
         {
-            _db=new AcmDbContext();
-            var serchTxt = txtBoxMemberSearch.Text;
+            try
+            {
+                _db = new AcmDbContext();
+                var serchTxt = txtBoxMemberSearch.Text;
 
-            var member = _db.Members.FirstOrDefault(c => c.MobileNo==serchTxt|| c.Name==serchTxt);
-            if (member == null)
-            {
-                MessageBox.Show("Have not any member whth this information! Please input valid information!");
+                var member = _db.Members.FirstOrDefault(c => c.MobileNo == serchTxt || c.Name == serchTxt);
+                if (member == null)
+                {
+                    MessageBox.Show("Have not any member whth this information! Please input valid information!");
+                }
+                else
+                {
+                    txtBoxMemberName.Text = member.Name;
+                    txtBoxMemberMobileNo.Text = member.MobileNo;
+                    txtBoxDepositAmount.ReadOnly = false;
+                    btnDeposit.Enabled = true;
+                    _memberId = member.Id;
+                }
             }
-            else
+            catch (Exception ex)
             {
-                txtBoxMemberName.Text = member.Name;
-                txtBoxMemberMobileNo.Text = member.MobileNo;
-                txtBoxDepositAmount.ReadOnly = false;
-                btnDeposit.Enabled = true;
-                _memberId = member.Id;
+
+                MessageBox.Show("Get an exception. The exception is -" + Environment.NewLine + ex.ToString());
             }
+            
             
         }
         
         private void btnDeposit_Click(object sender, EventArgs e)
         {
-            Deposit deposit=new Deposit();
-            deposit.MemberId = _memberId;
-            deposit.Amount = Convert.ToDecimal(txtBoxDepositAmount.Text);
-            deposit.DepositDateTime = depositDateTimePicker.Value;
+            try
+            {
+                if (Convert.ToDouble(txtBoxDepositAmount.Text)<=0 || txtBoxDepositAmount.Text=="")
+                {
+                    MessageBox.Show("Provided amount is not a right value");
+                    return;
+                }
 
-            if (deposit.Amount>0 && deposit.MemberId>0 && deposit.DepositDateTime!=null)
-            {
-                _db=new AcmDbContext();
-                _db.Deposits.Add(deposit);
-                _db.SaveChanges();
-                MessageBox.Show("Deposit successfully saved!");
+                Deposit deposit = new Deposit();
+                deposit.MemberId = _memberId;
+                deposit.Amount = Convert.ToDecimal(txtBoxDepositAmount.Text);
+                deposit.DepositDateTime = depositDateTimePicker.Value;
+
+                if (deposit.Amount > 0 && deposit.MemberId > 0 && deposit.DepositDateTime != null)
+                {
+                    _db = new AcmDbContext();
+                    _db.Deposits.Add(deposit);
+                    _db.SaveChanges();
+
+                    ClearTextBox();
+                    MessageBox.Show("Deposit successfully saved!");
+                }
+                else
+                {
+                    MessageBox.Show("Fail to save! Please check your input value!");
+                }
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("Fail to save! Please check your input value!");
+
+                MessageBox.Show("Get an exception. The exception is -" + Environment.NewLine + ex.ToString());
             }
+           
+
+        }
+
+        private void ClearTextBox()
+        {
+            txtBoxDepositAmount.Clear();
+            depositDateTimePicker.Value=DateTime.Now;
+            txtBoxMemberSearch.Clear();
+            txtBoxMemberName.Clear();
+            txtBoxMemberMobileNo.Clear();
+            txtBoxDepositAmount.ReadOnly = true;
+            btnDeposit.Enabled = false;
+            _memberId = 0;
 
         }
 
         private void btnDepositCancel_Click(object sender, EventArgs e)
         {
-            txtBoxDepositAmount.Clear();
+           ClearTextBox();
             this.Close();
         }
     }
