@@ -156,6 +156,7 @@
             this.btnMemberList.TabIndex = 0;
             this.btnMemberList.Text = "Member List";
             this.btnMemberList.UseVisualStyleBackColor = true;
+            this.btnMemberList.Click += new System.EventHandler(this.btnMemberList_Click);
             // 
             // btnDepositMemberList
             // 

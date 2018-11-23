@@ -40,5 +40,11 @@ namespace ACM.UI
             UpdateMemberFeeForm updateMemberFeeForm=new UpdateMemberFeeForm();
             updateMemberFeeForm.Show();
         }
+
+        private void btnMemberList_Click(object sender, EventArgs e)
+        {
+            MemberListForm memberListForm=new MemberListForm();
+            memberListForm.Show();
+        }
     }
 }
