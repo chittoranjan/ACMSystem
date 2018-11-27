@@ -31,6 +31,7 @@ namespace ACM.UI
                 var dgvList = (from memberList in depositMemberList
                     select new
                     {
+                        memberList.MemberId,
                         Name = memberList.Member.Name,
                         MobileNo = memberList.Member.MobileNo,
                         JoinDate = memberList.Member.CreateDateTime,
@@ -39,7 +40,7 @@ namespace ACM.UI
                     }).ToList();
                         
                 dataGridViewDepositMemberList.DataSource = dgvList;
-                var dataGridViewColumn = dataGridViewDepositMemberList.Columns["Id"];
+                var dataGridViewColumn = dataGridViewDepositMemberList.Columns["MemberId"];
                 if (dataGridViewColumn != null) dataGridViewColumn.Visible = false;
             }
             catch (Exception ex)
@@ -66,12 +67,15 @@ namespace ACM.UI
                 var srcDepositMember=(from srcMem in member 
                 select new 
                 {
+                    srcMem.MemberId,
                     Name = srcMem.Member.Name,
                     MobileNo = srcMem.Member.MobileNo,
                     JoinDate = srcMem.Member.CreateDateTime,
                     srcMem.DepositStartDate
                 }).ToList();
                 dataGridViewDepositMemberList.DataSource = srcDepositMember;
+                var dataGridViewColumn = dataGridViewDepositMemberList.Columns["MemberId"];
+                if (dataGridViewColumn != null) dataGridViewColumn.Visible = false;
             }
             catch (Exception ex)
             {
@@ -89,6 +93,15 @@ namespace ACM.UI
         {
             txtBoxMemberSearch.Clear();
             this.Close();
+        }
+
+        private void dataGridViewDepositMemberList_DoubleClick(object sender, EventArgs e)
+        {
+            if (dataGridViewDepositMemberList.CurrentRow != null)
+            {
+                var memberId = (int)dataGridViewDepositMemberList.CurrentRow.Cells["MemberId"].Value;
+                MessageBox.Show(memberId.ToString());
+            }
         }
     }
 }

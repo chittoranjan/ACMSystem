@@ -50,6 +50,7 @@
             this.dataGridViewDepositMemberList.Size = new System.Drawing.Size(860, 366);
             this.dataGridViewDepositMemberList.TabIndex = 6;
             this.dataGridViewDepositMemberList.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dataGridViewDepositMemberList_RowPostPaint);
+            this.dataGridViewDepositMemberList.DoubleClick += new System.EventHandler(this.dataGridViewDepositMemberList_DoubleClick);
             // 
             // slNo
             // 

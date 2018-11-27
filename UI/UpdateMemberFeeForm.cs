@@ -32,15 +32,18 @@ namespace ACM.UI
                 var serchTxt = txtBoxMemberSearch.Text;
 
                 var member = _db.Members.FirstOrDefault(c => c.MobileNo == serchTxt || c.Name == serchTxt);
-                var feeAmount = _db.MemberFeeAmounts.FirstOrDefault(c => c.MemberId == member.Id);
+                
                 if (member == null)
                 {
                     MessageBox.Show("Have not any member whth this information! Please input valid information!");
                     return;
                 }
+
                     txtBoxMemberName.Text = member.Name;
                     txtBoxMemberMobileNo.Text = member.MobileNo;
                     _memberId = member.Id;
+
+                var feeAmount = _db.MemberFeeAmounts.FirstOrDefault(c => c.MemberId == member.Id);
                 if (feeAmount!=null) 
                 {
                     txtBoxOldFeeAmount.Text = feeAmount.FeeAmount.ToString(CultureInfo.InvariantCulture);
