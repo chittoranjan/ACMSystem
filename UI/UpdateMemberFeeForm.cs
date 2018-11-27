@@ -41,13 +41,18 @@ namespace ACM.UI
                     txtBoxMemberName.Text = member.Name;
                     txtBoxMemberMobileNo.Text = member.MobileNo;
                     _memberId = member.Id;
-                    if (feeAmount != null)
-                    {
-                        txtBoxOldFeeAmount.Text = feeAmount.FeeAmount.ToString(CultureInfo.InvariantCulture);
-                        _updateFeeId = feeAmount.Id;
-                    }
-                    txtBoxNewFeeAmount.ReadOnly = false;
-                    btnFeeUpdate.Enabled = true;
+                if (feeAmount!=null) 
+                {
+                    txtBoxOldFeeAmount.Text = feeAmount.FeeAmount.ToString(CultureInfo.InvariantCulture);
+                    _updateFeeId = feeAmount.Id;
+                }
+                if (feeAmount==null)
+                {
+                    btnFeeUpdate.Text = "Add";
+                }
+                txtBoxNewFeeAmount.ReadOnly = false;
+                btnFeeUpdate.Enabled = true;
+
             }
             catch (Exception ex)
             {
@@ -88,6 +93,8 @@ namespace ACM.UI
                     newFeeAmount.FeeAmount= Convert.ToDouble(txtBoxNewFeeAmount.Text);
                     _db.MemberFeeAmounts.Add(newFeeAmount);
                     _db.SaveChanges();
+                    ClearTextBox();
+                    
                     MessageBox.Show("Member fee amount added successfully");
                 }
             }
@@ -110,6 +117,7 @@ namespace ACM.UI
             btnFeeUpdate.Enabled = false;
             _updateFeeId = 0;
             _memberId = 0;
+            btnFeeUpdate.Text = "Update";
 
         }
 

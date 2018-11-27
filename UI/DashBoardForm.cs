@@ -46,5 +46,11 @@ namespace ACM.UI
             MemberListForm memberListForm=new MemberListForm();
             memberListForm.Show();
         }
+
+        private void btnDepositMemberList_Click(object sender, EventArgs e)
+        {
+            DepositMemberListForm depositMemberListForm=new DepositMemberListForm();
+            depositMemberListForm.Show();
+        }
     }
 }

@@ -63,6 +63,7 @@ namespace ACM.UI
                     }
                     else
                     {
+                        ClearTextBox();
                         MessageBox.Show("Member created successully but fee amount not created");
                     }
                 }

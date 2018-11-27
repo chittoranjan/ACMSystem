@@ -12,5 +12,7 @@ namespace ACM.Models
         public string Name { get; set; }
         public string MobileNo { get; set; }
         public DateTime CreateDateTime { get; set; }
+        public List<DepositMemberList> DepositMemberLists { get; set; }
+        public List<MemberFeeAmount> MemberFeeAmounts { get; set; }
     }
 }

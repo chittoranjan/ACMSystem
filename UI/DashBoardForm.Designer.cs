@@ -166,6 +166,7 @@
             this.btnDepositMemberList.TabIndex = 0;
             this.btnDepositMemberList.Text = "Deposit Member List";
             this.btnDepositMemberList.UseVisualStyleBackColor = true;
+            this.btnDepositMemberList.Click += new System.EventHandler(this.btnDepositMemberList_Click);
             // 
             // DashBoardForm
             // 

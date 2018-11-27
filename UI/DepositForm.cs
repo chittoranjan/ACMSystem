@@ -47,8 +47,6 @@ namespace ACM.UI
 
                 MessageBox.Show("Get an exception. The exception is -" + Environment.NewLine + ex.ToString());
             }
-            
-            
         }
         
         private void btnDeposit_Click(object sender, EventArgs e)
@@ -70,7 +68,20 @@ namespace ACM.UI
                 {
                     _db = new AcmDbContext();
                     _db.Deposits.Add(deposit);
-                    _db.SaveChanges();
+                    var count=_db.SaveChanges()>0;
+
+                    if (count)
+                    {
+                        var depositMemberId = _db.DepositMemberLists.FirstOrDefault(c => c.MemberId == _memberId);
+                        if (depositMemberId==null)
+                        {
+                            DepositMemberList depositMemberList = new DepositMemberList();
+                            depositMemberList.DepositStartDate=DateTime.Now;
+                            depositMemberList.MemberId = _memberId;
+                            _db.DepositMemberLists.Add(depositMemberList);
+                            _db.SaveChanges();
+                        }
+                    }
 
                     ClearTextBox();
                     MessageBox.Show("Deposit successfully saved!");
@@ -85,8 +96,6 @@ namespace ACM.UI
 
                 MessageBox.Show("Get an exception. The exception is -" + Environment.NewLine + ex.ToString());
             }
-           
-
         }
 
         private void ClearTextBox()

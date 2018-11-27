@@ -67,5 +67,10 @@ namespace ACM.UI
             txtBoxMemberSearch.Clear();
             this.Close();
         }
+
+        private void dataGridViewMemberList_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
+        {
+            this.dataGridViewMemberList.Rows[e.RowIndex].Cells["slNo"].Value = (e.RowIndex + 1).ToString();
+        }
     }
 }

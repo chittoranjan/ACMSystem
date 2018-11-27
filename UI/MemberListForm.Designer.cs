@@ -32,6 +32,7 @@
             this.txtBoxMemberSearch = new System.Windows.Forms.TextBox();
             this.dataGridViewMemberList = new System.Windows.Forms.DataGridView();
             this.btnMemberListClose = new System.Windows.Forms.Button();
+            this.slNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMemberList)).BeginInit();
             this.SuspendLayout();
             // 
@@ -56,6 +57,8 @@
             // 
             this.dataGridViewMemberList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewMemberList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewMemberList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.slNo});
             this.dataGridViewMemberList.Location = new System.Drawing.Point(12, 54);
             this.dataGridViewMemberList.Name = "dataGridViewMemberList";
             this.dataGridViewMemberList.ReadOnly = true;
@@ -63,6 +66,7 @@
             this.dataGridViewMemberList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewMemberList.Size = new System.Drawing.Size(860, 366);
             this.dataGridViewMemberList.TabIndex = 2;
+            this.dataGridViewMemberList.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dataGridViewMemberList_RowPostPaint);
             // 
             // btnMemberListClose
             // 
@@ -73,6 +77,12 @@
             this.btnMemberListClose.Text = "Close";
             this.btnMemberListClose.UseVisualStyleBackColor = true;
             this.btnMemberListClose.Click += new System.EventHandler(this.btnMemberListClose_Click);
+            // 
+            // slNo
+            // 
+            this.slNo.HeaderText = "Sl No";
+            this.slNo.Name = "slNo";
+            this.slNo.ReadOnly = true;
             // 
             // MemberListForm
             // 
@@ -97,5 +107,6 @@
         private System.Windows.Forms.TextBox txtBoxMemberSearch;
         private System.Windows.Forms.DataGridView dataGridViewMemberList;
         private System.Windows.Forms.Button btnMemberListClose;
+        private System.Windows.Forms.DataGridViewTextBoxColumn slNo;
     }
 }
