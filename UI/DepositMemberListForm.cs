@@ -97,11 +97,29 @@ namespace ACM.UI
 
         private void dataGridViewDepositMemberList_DoubleClick(object sender, EventArgs e)
         {
-            if (dataGridViewDepositMemberList.CurrentRow != null)
+            try
             {
-                var memberId = (int)dataGridViewDepositMemberList.CurrentRow.Cells["MemberId"].Value;
-                MessageBox.Show(memberId.ToString());
+                if (dataGridViewDepositMemberList.CurrentRow != null)
+                {
+                    var memberId = (int)dataGridViewDepositMemberList.CurrentRow.Cells["MemberId"].Value;
+                    if (memberId > 0)
+                    {
+                        MemberDepositDetailsForm memberDepositDetailsForm = new MemberDepositDetailsForm(memberId);
+                        memberDepositDetailsForm.Show();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Selected member is not a valid");
+                    }
+
+
+                }
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Get an exception. The exception is -" + Environment.NewLine + ex.ToString());
+            }
+            
         }
     }
 }

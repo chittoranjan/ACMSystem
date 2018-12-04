@@ -31,8 +31,8 @@
             this.btnMemberSearch = new System.Windows.Forms.Button();
             this.txtBoxMemberSearch = new System.Windows.Forms.TextBox();
             this.dataGridViewMemberList = new System.Windows.Forms.DataGridView();
-            this.btnMemberListClose = new System.Windows.Forms.Button();
             this.slNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnMemberListClose = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMemberList)).BeginInit();
             this.SuspendLayout();
             // 
@@ -68,6 +68,12 @@
             this.dataGridViewMemberList.TabIndex = 2;
             this.dataGridViewMemberList.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dataGridViewMemberList_RowPostPaint);
             // 
+            // slNo
+            // 
+            this.slNo.HeaderText = "Sl No";
+            this.slNo.Name = "slNo";
+            this.slNo.ReadOnly = true;
+            // 
             // btnMemberListClose
             // 
             this.btnMemberListClose.Location = new System.Drawing.Point(797, 426);
@@ -77,12 +83,6 @@
             this.btnMemberListClose.Text = "Close";
             this.btnMemberListClose.UseVisualStyleBackColor = true;
             this.btnMemberListClose.Click += new System.EventHandler(this.btnMemberListClose_Click);
-            // 
-            // slNo
-            // 
-            this.slNo.HeaderText = "Sl No";
-            this.slNo.Name = "slNo";
-            this.slNo.ReadOnly = true;
             // 
             // MemberListForm
             // 

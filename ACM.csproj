@@ -98,6 +98,12 @@
     <Compile Include="UI\DepositMemberListForm.Designer.cs">
       <DependentUpon>DepositMemberListForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\MemberDepositDetailsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\MemberDepositDetailsForm.Designer.cs">
+      <DependentUpon>MemberDepositDetailsForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\MemberListForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -142,6 +148,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\DepositMemberListForm.resx">
       <DependentUpon>DepositMemberListForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\MemberDepositDetailsForm.resx">
+      <DependentUpon>MemberDepositDetailsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\MemberListForm.resx">
       <DependentUpon>MemberListForm.cs</DependentUpon>
